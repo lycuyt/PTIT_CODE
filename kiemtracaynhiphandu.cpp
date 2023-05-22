@@ -58,6 +58,6 @@ int main(){
             if(s=="R") addRight(T,x,y);
         }
         NLR(T);
-        cout << check << endl;
+        
     }
 }

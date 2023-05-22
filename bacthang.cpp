@@ -18,6 +18,6 @@ const long long mod = 1e9+7;
                 dp[i]=dp[i]%mod;
             }
         }
-        cout<<dp[n]<<endl;
+        cout<<dp[n];
     }
  }
