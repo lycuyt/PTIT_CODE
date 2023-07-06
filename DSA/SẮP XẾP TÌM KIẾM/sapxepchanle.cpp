@@ -19,20 +19,7 @@ int main()
             dem2++;
         }
     }
-    // sap xep le tang dan, chan giam dan
-    // vector<long > le;
-    // vector<long> chan;
-    // for(int i=0;i<n;i++){
-    //     if(i%2==0){
-    //         le.push_back(a[i]);
-    //     }else{
-    //         chan.push_back(a[i]);
-    //     }
 
-    // }
-   
-    // sort(le.begin(), le.end());
-    // sort(chan.begin(), chan.end(), cmp);
     sort(a,a+dem1);
     sort(b,b+dem2);
     if(n%2==0){
