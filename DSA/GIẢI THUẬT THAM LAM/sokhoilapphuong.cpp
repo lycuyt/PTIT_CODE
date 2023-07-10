@@ -22,7 +22,7 @@ int main()
         int kt=0;
         y = cbrt(x);
         for (int i = y; i >= 1; --i) {
-            z = i*i*i;
+            z = pow(I,3);
            
             if (check(to_string(z), to_string(x))==1) {
                 cout << z<<endl;
