@@ -42,7 +42,7 @@ int main()
                 vt=i;
                 break;}
         }
-        cout<<vt<<endl;
+        // cout<<vt<<endl;
         if(kt==1) cout<<1<<endl;
         else cout<<0<<endl;
     }
