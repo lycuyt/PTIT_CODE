@@ -1,0 +1,1 @@
+{"name":"Local: sapxepcongviec","url":"e:\\code-dsa\\dsa samsung\\sapxepcongviec.cpp","tests":[{"id":1688750396609,"input":"1\n\n6\n\n1  3  0  5  8  5\n\n2  4  6  7  9  9","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\code-dsa\\dsa samsung\\sapxepcongviec.cpp","group":"local","local":true}

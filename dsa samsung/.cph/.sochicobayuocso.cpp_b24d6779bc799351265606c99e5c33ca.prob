@@ -1,0 +1,1 @@
+{"name":"Local: sochicobayuocso","url":"e:\\code-dsa\\dsa samsung\\sochicobayuocso.cpp","tests":[{"id":1689431122736,"input":"2\n\n1 10\n\n1 1000000000000","output":""},{"id":1689431557278,"input":"1\n1 10","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\code-dsa\\dsa samsung\\sochicobayuocso.cpp","group":"local","local":true}

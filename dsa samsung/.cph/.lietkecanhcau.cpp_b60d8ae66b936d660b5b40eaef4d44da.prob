@@ -1,0 +1,1 @@
+{"name":"Local: lietkecanhcau","url":"e:\\code-dsa\\dsa samsung\\lietkecanhcau.cpp","tests":[{"id":1688640682177,"input":"2\n\n5 5\n\n1 2 1 3 2 3 2 5 3 4\n\n5 5\n\n1 2 1 3 2 3 2 5 3 4","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\code-dsa\\dsa samsung\\lietkecanhcau.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: hoanviketiep","url":"e:\\code-dsa\\dsa samsung\\hoanviketiep.cpp","tests":[{"id":1688574675352,"input":"2\n\n5 \n\n1  2  3  4  5\n\n5\n\n5  4  3  2  1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\code-dsa\\dsa samsung\\hoanviketiep.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: dichuyentranhvatcan","url":"e:\\code-dsa\\dsa samsung\\dichuyentranhvatcan.cpp","tests":[{"id":1690619775355,"input":"2\n\n3\n\n...\n\n.X.\n\n...\n\n0 0 0 2\n\n3\n\n.X.\n\n.X.\n\n...\n\n0 0 0 2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\code-dsa\\dsa samsung\\dichuyentranhvatcan.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: quanvuatrenbanco","url":"e:\\code-dsa\\dsa samsung\\quanvuatrenbanco.cpp","tests":[{"id":1690617054517,"input":"4 3 1 6","output":"3"},{"id":1690619384797,"input":"5 5 5 6","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\code-dsa\\dsa samsung\\quanvuatrenbanco.cpp","group":"local","local":true}

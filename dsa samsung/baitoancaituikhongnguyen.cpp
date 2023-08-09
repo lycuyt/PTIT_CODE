@@ -22,11 +22,12 @@ int main()
         sort(a, a+n, cmp);
         double value=0;
         for(int i=0;i<n;i++){
-            if(a[i].weight<=w){
+            if(w>=0 && a[i].weight<=w){
                 w-=a[i].weight;
                 value+=a[i].profit;
-            }else{
+            }else if(w<a[i].weight){
                 value+=a[i].profit*((double)w/a[i].weight);
+                break;
             }
         }
         cout<<fixed<<setprecision(2)<<value<<endl;

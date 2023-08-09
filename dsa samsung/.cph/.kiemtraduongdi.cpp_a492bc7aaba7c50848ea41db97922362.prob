@@ -1,0 +1,1 @@
+{"name":"Local: kiemtraduongdi","url":"e:\\code-dsa\\dsa samsung\\kiemtraduongdi.cpp","tests":[{"id":1688636582589,"input":"1\n\n5 5\n\n1 2\n\n2 3\n\n3 4\n\n1 4\n\n5 6\n\n2\n\n1 5\n\n2 4","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\code-dsa\\dsa samsung\\kiemtraduongdi.cpp","group":"local","local":true}

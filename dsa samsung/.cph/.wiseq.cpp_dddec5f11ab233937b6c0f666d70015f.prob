@@ -1,0 +1,1 @@
+{"name":"Local: wiseq","url":"e:\\code-dsa\\dsa samsung\\wiseq.cpp","tests":[{"id":1690986323791,"input":"5 10\n4 2 3 1 5\n","output":""},{"id":1690986350864,"input":"5 5\n4 2 3 1 5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\code-dsa\\dsa samsung\\wiseq.cpp","group":"local","local":true}
