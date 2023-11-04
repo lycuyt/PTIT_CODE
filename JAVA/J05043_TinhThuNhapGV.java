@@ -2,94 +2,89 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package codeptit;
+package CODEPTIT;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Scanner;
 
 /**
  *
  * @author Admin
  */
+class thuNhapNV {
+
+    private String ma, ten, chucvu;
+    private int basicsalary, salarydays, totalSalary, phucap, ung;
+
+    public thuNhapNV(int ma, String ten, String chucvu, int basicsalary, int salarydays) {
+        this.ma = "NV" + String.format("%02d", ma);
+        this.ten = ten;
+        this.chucvu = chucvu;
+        this.basicsalary = basicsalary;
+        this.salarydays = salarydays;
+        //xu li phu cap;
+        if (chucvu.equals("GD")) {
+            this.phucap = 500;
+        } else if (chucvu.equals("PGD")) {
+            this.phucap = 400;
+        } else if (chucvu.equals("TP")) {
+            this.phucap = 300;
+        } else if (chucvu.equals("KT")) {
+            this.phucap = 250;
+        } else {
+            this.phucap = 100;
+        }
+        //luong tong
+        this.totalSalary = basicsalary * salarydays ;
+        //xu li tam ung
+        if ((this.phucap + this.totalSalary) * 2 / 3 < 25000) {
+            this.ung = (int)Math.round((double)((phucap + totalSalary) * 2 / 3) / 1000) * 1000;
+        } else {
+            this.ung = 25000;
+        }
+
+    }
+
+    public int getPhucap() {
+        return phucap;
+    }
+
+    public String getChucvu() {
+        return chucvu;
+    }
+
+    public int getTotalSalary() {
+        return totalSalary;
+    }
+
+    @Override
+    public String toString() {
+        return ma + " " + ten + " " + phucap + " " + totalSalary + " " + ung + " " + ( phucap + totalSalary - ung);
+    }
+}
+
 public class J05043_TinhThuNhapGV {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = Integer.parseInt(sc.nextLine());
-        long sum =0;
-        List<NV> a = new ArrayList<>();
+        int n = sc.nextInt();
+        thuNhapNV[] arr = new thuNhapNV[n];
         for (int i = 0; i < n; i++) {
-            String name = sc.nextLine();
-            String cv = sc.nextLine();
-            long wage = Long.parseLong(sc.nextLine());
-            long day = Long.parseLong(sc.nextLine());
-           
-            NV x = new NV(name, cv, wage, day);
-//            sum+=x.tong();
-            a.add(x);
+            sc.nextLine();
+            arr[i] = new thuNhapNV(i + 1, sc.nextLine(), sc.nextLine(), sc.nextInt(), sc.nextInt());
         }
-        Collections.sort(a);
-        for ( NV x : a) {
-            System.out.println(x);
+        Arrays.sort(arr, new Comparator<thuNhapNV>(){
+            @Override
+            public int compare(thuNhapNV o1, thuNhapNV o2) {
+                return (o2.getTotalSalary()+o2.getPhucap()) - (o1.getTotalSalary()+o1.getPhucap());
+            
+        }});
+        for (thuNhapNV x : arr) {
+                System.out.println(x);
+
+            }
         }
     }
-}
-class NV implements Comparable<NV>{
-    public static int num = 1;
-    private String id, name, cv;
-    private long wage, day;
-    
-    
-
-    public NV() {
-    }
-
-    public NV( String name, String cv,long wage, long day ) {
-        this.id = String.format("NV%02d", num++);
-        this.name = name;
-        this.wage = wage;
-        this.day = day;
-        this.cv = cv;
-    }
-
-    public String getCv() {
-        return cv;
-    }
-    public long getPC()
-    {
-        if (cv.equals("GD")) return 500;
-        if(cv.equals("PGD")) return 400;
-        if(cv.equals("TP")) return 300;
-        if(cv.equals("KT")) return 250;
-        return 100;
-    }
-    public long getLC()
-    {
-        return wage * day;
-    }
-    public long getTU()
-    {
-        if((getLC() + getPC())*2.0/3<25000) return (long) Math.round(((double) getPC() + getLC()) * 2.0 / 3000) *1000;
-        return 25000;
-    }
-    public long conlai()
-    {
-        return getLC() + getPC() - getTU();
-    }
-    
-    @Override
-    public String toString()
-    {
-        return id + " " + name + " " + getPC() + " "+ getLC()+" "+ getTU() + " " + conlai();
-    }
-
-    @Override
-    public int compareTo(NV o) {
-        if(this.getLC() + this.getPC()> o.getLC() + o.getPC()) return -1;
-        return 1;
-    }
-}
 /*
 4
 Tran Thi Yen
@@ -106,6 +101,6 @@ TP
 25
 Le Thanh
 GD
-5000
+5000 
 28
 */
