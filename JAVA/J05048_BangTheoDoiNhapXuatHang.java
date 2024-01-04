@@ -4,81 +4,59 @@
  */
 package codeptit;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.Scanner;
 
 /**
  *
  * @author Admin
  */
-class MaHang implements Comparable<MaHang>{
+class hangHoa{
     private String ma;
-    private int sl;
+    private int luongNhap, luongXuat, donGia , Tien, Thue;
 
-    public MaHang() {
-    }
-
-    public MaHang(String ma, int sl) {
+    public hangHoa(String ma, int luongNhap) {
         this.ma = ma;
-        this.sl = sl;
-        
+        this.luongNhap = luongNhap;
+        //xu li luong luongxuathang;
+        if(ma.charAt(0) == 'A'){
+            luongXuat = Math.round((float)luongNhap * 6 / 10); 
+        }
+        if(ma.charAt(0) == 'B'){
+            luongXuat =Math.round((float)luongNhap * 7 / 10); 
+        }
+        //xu li don gia
+        int n = 4;
+        if(ma.charAt(n) == 'Y') donGia = 110000;
+        if(ma.charAt(n) == 'N') donGia = 135000;
+        //xu li tien
+        this.Tien = luongXuat * donGia;
+        //xu li thue
+        if(ma.charAt(0) == 'A' && ma.charAt(4) == 'Y') this.Thue = (int)(Tien * 0.08);
+        else if(ma.charAt(0) == 'A' && ma.charAt(4) == 'N') this.Thue =(int) (Tien * 0.11);
+        else if(ma.charAt(0) == 'B' && ma.charAt(4) == 'Y') this.Thue = (int)(Tien * 0.17);
+        else if(ma.charAt(0) == 'B' && ma.charAt(4)=='N' ) this.Thue =(int) (Tien * 0.22);
     }
 
-    public String getMa() {
-        return ma;
+    @Override
+    public String toString() {
+        return  ma + " " + luongNhap + " " + luongXuat + " " + donGia + " " + Tien + " " + Thue ;
     }
     
-    public int getXuat()
-    {
-        if(ma.substring(0, 1).equals("A")) return Math.round((float) ( 0.6 * sl));
-        return Math.round((float) (0.7 * sl));
-    }
-    public int getDG()
-    {
-        if(ma.charAt(4) == 'Y') return 110000;
-        return 135000;
-    }
-    public int Tien()
-    {
-        return getXuat() * getDG();
-    }
-    public int getThue()
-    {
-        if(ma.charAt(0) == 'A' && ma.charAt(4) == 'Y')  return (int)(0.08 * Tien());
-        if(ma.charAt(0 ) == 'A' && ma.charAt(4) == 'N')  return (int)(0.11 * Tien());
-        if(ma.charAt(0 ) == 'B' && ma.charAt(4) == 'Y')  return (int)(0.17 * Tien());
-         return (int)(0.22 * Tien());
-    }
-    @Override
-    public String toString()
-    {
-        return ma + " " + sl + " " + getXuat()+" " + getDG() + " " + Tien() + " " + getThue();
-    }
-
-    @Override
-    public int compareTo(MaHang o) {
-        return -(this.getThue() - o.getThue());
-    }
+    
 }
 public class J05048_BangTheoDoiNhapXuatHang {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = Integer.parseInt(sc.nextLine());
-        List<MaHang> a = new ArrayList<>();
+        hangHoa[] arr = new hangHoa[n];
         for (int i = 0; i < n; i++) {
-            String ma  = sc.nextLine();
-            int sl = Integer.parseInt(sc.nextLine());
-            MaHang x = new MaHang(ma, sl);
-            a.add(x);
+            
+            String ma = sc.nextLine();
+            int luongNhap = Integer.parseInt(sc.nextLine());
+            arr[i] = new hangHoa(ma, luongNhap);
         }
-        Collections.sort(a);
-        String s = sc.nextLine();
-        for(MaHang x : a){
-            if(x.getMa().substring(0, 1).equals(s)){
-                System.out.println(x);
-            }
+        for(hangHoa x : arr){
+            System.out.println(x);
         }
     }
 }
@@ -90,5 +68,4 @@ B012N
 2500
 B003Y
 4582
-B
 */

@@ -54,6 +54,10 @@ class VDV implements Comparable<VDV>{
         thanhtichtt = (this.end.getTime() - this.start.getTime())/1000;
         thanhtichxh = thanhtichtt -uutien;
     }
+
+    public int getXh() {
+        return xh;
+    }
     
     public long getThanhtichxh() {
         return thanhtichxh;
@@ -96,37 +100,23 @@ public class J05055_XepHangVienDongVien_1 {
             a.add(vdv);
         }
         Collections.sort(a);
-        int k = 1, s = 0 , e = 0;
-        for(int i = 1;i<n;i++)
+        a.get(0).setXh(1);
+        for(int i = 1;i<a.size();i++)
         {
-//            System.out.println(k);
-            if(a.get(i).getThanhtichxh() == a.get(i-1).getThanhtichxh())
+            if (a.get(i).getThanhtichxh() == a.get(i-1).getThanhtichxh())
             {
-                e += 1;
+                a.get(i).setXh(a.get(i-1).getXh());
             }else{
-                
-                for (int j = s; j <= e; j++) {
-                    a.get(j).setXh(k);
-                    
-                }
-                k = k + (e -s) + 1;                 
-                s = i;
-                e = i;
-                        
+                a.get(i).setXh(i+1);
+            }
+        }
+        Collections.sort(a, new Comparator<VDV>(){
+            @Override
+            public int compare(VDV o1, VDV o2) {
+                return o1.getId().compareTo(o2.getId());
             }
             
-        }
-       
-        for (int i = s; i < n; i++) {
-            a.get(i).setXh(k);
-        }
-        
-//        Collections.sort(a, new Comparator<VDV>(){
-//            @Override
-//            public int compare(VDV o1, VDV o2){
-//                return o1.getId().compareTo(o2.getId());
-//            }
-//        });
+        });
         for(VDV x : a){
             System.out.println(x);
         }
